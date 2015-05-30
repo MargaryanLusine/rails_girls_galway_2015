@@ -39,6 +39,8 @@ class PlacesController < ApplicationController
   private
     def set_place
       @place = Place.find(params[:id])
+      @comments = @place.comments.all
+      @comment = @place.comments.build
     end
 
     def place_params
